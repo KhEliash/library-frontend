@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { useGetBooksQuery } from "../redux/api/booksApi";
 
 function App() {
@@ -7,10 +6,9 @@ function App() {
 
   return (
     <div className="  ">
-      <Button>Click me</Button>
-      {book.data.map((b: any) => (
+      {book?.data?.map((book: any) => (
         <div>
-          <p>{b.title}</p>
+          <p>{book.title}</p>
         </div>
       ))}
     </div>
