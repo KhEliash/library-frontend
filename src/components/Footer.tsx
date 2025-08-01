@@ -1,4 +1,3 @@
-// Footer.tsx
 export default function Footer() {
   return (
     <footer className="text-center py-4 border-t mt-10 text-gray-500 text-sm">
