@@ -4,7 +4,7 @@ const Home = () => {
   const { data: book, error, isLoading } = useGetBooksQuery(undefined);
   console.log({ book, error, isLoading });
   return (
-    <div className="bg-red-100 p-5">
+    <div className="bg-red-200 p-5">
       {book?.data?.map((book: any,index:number) => (
         <div key={index}>
           <p>{index+1}</p>
