@@ -1,16 +1,12 @@
-import { useGetBooksQuery } from "../redux/api/booksApi";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  const { data: book, error, isLoading } = useGetBooksQuery(undefined);
-  console.log({ book, error, isLoading });
-
   return (
     <div className="  ">
-      {book?.data?.map((book: any) => (
-        <div>
-          <p>{book.title}</p>
-        </div>
-      ))}
+      <p>navbar</p>
+      <Outlet />
+
+      <p>footer</p>
     </div>
   );
 }
