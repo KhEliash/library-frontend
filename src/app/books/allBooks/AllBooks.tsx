@@ -11,6 +11,7 @@ import {
 import { useGetBooksQuery } from "@/redux/api/booksApi";
 import { Link } from "react-router-dom";
 import BookUpdateModal from "../update/BookUpdateModal";
+import BookDeleteConfirm from "../delete/BookDelete";
 
 const AllBooks = () => {
   const { data: books, isLoading } = useGetBooksQuery(undefined);
@@ -45,7 +46,7 @@ const AllBooks = () => {
                 <TableCell>
                   <Link to={`/book/${book?._id}`}> 👁 </Link>
                  <BookUpdateModal book={book} />
-
+<BookDeleteConfirm id={book._id} />
                 </TableCell>
               </TableRow>
             ))}

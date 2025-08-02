@@ -50,7 +50,9 @@ export const booksApi = createApi({
     }),
     borrowSummary: build.query({
       query: () => "/summary",
+       providesTags: ["Book"],
     }),
+    
   }),
 });
 
