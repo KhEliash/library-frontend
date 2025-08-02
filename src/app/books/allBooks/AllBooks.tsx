@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useGetBooksQuery } from "@/redux/api/booksApi";
+import { Link } from "react-router-dom";
 
 const AllBooks = () => {
   const { data: books, isLoading } = useGetBooksQuery(undefined);
@@ -27,6 +28,7 @@ const AllBooks = () => {
               <TableHead>ISBN</TableHead>
               <TableHead>Copies</TableHead>
               <TableHead>Available</TableHead>
+              <TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -38,6 +40,9 @@ const AllBooks = () => {
                 <TableCell>{book.isbn}</TableCell>
                 <TableCell>{book.copies}</TableCell>
                 <TableCell>{book.available ? "✅" : "❌"}</TableCell>
+                <TableCell>
+                  <Link to={`/book/${book?._id}`}> 👁 </Link>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
