@@ -19,6 +19,14 @@ export const booksApi = createApi({
       }),
       invalidatesTags: ["Book"],
     }),
+     updateBook: build.mutation({
+      query: ({ id, data }) => ({
+        url: `/book/${id}`,
+        method: "PATCH",
+        body: data,
+      }),
+      invalidatesTags: ["Books"],
+    }),
     // borrow
 
     getBook: build.query({
