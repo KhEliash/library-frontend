@@ -23,7 +23,7 @@ export default function BorrowBookForm() {
     try {
       await borrowBook({ id, payload: { quantity, dueDate } }).unwrap();
       toast.success("Book borrowed successfully!");
-    //   navigate("/borrow-summary");
+      navigate("/borrow-summary");
     } catch (err: any) {
       toast.error(err?.data?.message || "Borrow failed");
     }
