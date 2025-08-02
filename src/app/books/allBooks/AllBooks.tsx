@@ -1,3 +1,4 @@
+ 
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Table,
@@ -9,6 +10,7 @@ import {
 } from "@/components/ui/table";
 import { useGetBooksQuery } from "@/redux/api/booksApi";
 import { Link } from "react-router-dom";
+import BookUpdateModal from "../update/BookUpdateModal";
 
 const AllBooks = () => {
   const { data: books, isLoading } = useGetBooksQuery(undefined);
@@ -42,6 +44,8 @@ const AllBooks = () => {
                 <TableCell>{book.available ? "✅" : "❌"}</TableCell>
                 <TableCell>
                   <Link to={`/book/${book?._id}`}> 👁 </Link>
+                 <BookUpdateModal book={book} />
+
                 </TableCell>
               </TableRow>
             ))}
