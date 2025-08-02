@@ -19,9 +19,32 @@ export const booksApi = createApi({
       }),
       invalidatesTags: ["Book"],
     }),
+    // borrow
+
+    getBook: build.query({
+      query: (id) => `/book/${id}`,
+      providesTags: ["Book"],
+    }),
+    borrowBook: build.mutation({
+      query: ({ id, payload }) => ({
+        url: `/borrow/${id}`,
+        method: "POST",
+        body: payload,
+      }),
+        invalidatesTags: ["Book"],
+    }),
+    borrowSummary: build.query({
+      query: () => "/summary",
+    }),
   }),
 });
 
 // Export hooks for usage in function components, which are
 // auto-generated based on the defined endpoints
-export const { useGetBooksQuery, useCreateBookMutation } = booksApi;
+export const {
+  useGetBooksQuery,
+  useCreateBookMutation,
+  useBorrowBookMutation,
+  useBorrowSummaryQuery,
+  useGetBookQuery,
+} = booksApi;
