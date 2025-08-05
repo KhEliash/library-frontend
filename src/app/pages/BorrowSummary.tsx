@@ -23,7 +23,7 @@ export default function BorrowSummary() {
   const summary = data?.data || [];
 
   return (
-    <div className="max-w-3xl mx-auto mt-10">
+    <div className="max-w-4xl mx-auto mt-10 p-2">
       <h2 className="text-2xl font-bold mb-6">Borrow Summary</h2>
       {summary.length === 0 ? (
         <div>No borrowed books yet.</div>
@@ -38,7 +38,7 @@ export default function BorrowSummary() {
           </TableHeader>
           <TableBody>
             {summary.map((item: any) => (
-              <TableRow key={item.isbn}>
+              <TableRow key={item.isbn} className="odd: ">
                 <TableCell>{item.title}</TableCell>
                 <TableCell>{item.isbn}</TableCell>
                 <TableCell>{item.totalQuantity}</TableCell>

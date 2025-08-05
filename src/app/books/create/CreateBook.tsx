@@ -14,6 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useNavigate } from "react-router-dom";
 import { useCreateBookMutation } from "@/redux/api/booksApi";
+import { Plus } from "lucide-react";
 
 const formSchema = z.object({
   title: z.string().min(1),
@@ -47,7 +48,7 @@ const CreateBook = () => {
 
   return (
     <div className="max-w-xl mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">➕ Add New Book</h2>
+      <h2 className="text-2xl font-bold mb-4 flex items-center gap-2"><Plus className="text-green-500"/> Add New Book</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           {["title", "author", "genre", "isbn", "copies"].map((field) => (
