@@ -27,25 +27,28 @@ const BookDetails = () => {
       <p>
         <strong>ISBN:</strong> {book.isbn}
       </p>
-     
+
       <p className="mt-4">
         <strong>Description:</strong> {book.description}
       </p>
 
       <div className="flex gap-4 mt-6">
-        <Button
-          onClick={() => navigate(`/borrow/${book._id}`)}
-          className="cursor-pointer"
-        >
-          Borrow
-        </Button>
-        <Button
-          variant="outline"
-          onClick={() => navigate(-1)}
-          className="cursor-pointer"
-        >
-          Back
-        </Button>
+        {book.available ? (
+          <Button
+            onClick={() => navigate(`/borrow/${book._id}`)}
+            className="cursor-pointer"
+          >
+            Borrow
+          </Button>
+        ) : (
+          <Button
+            variant="outline"
+            onClick={() => navigate(-1)}
+            className="cursor-pointer"
+          >
+            Back
+          </Button>
+        )}
       </div>
     </div>
   );
