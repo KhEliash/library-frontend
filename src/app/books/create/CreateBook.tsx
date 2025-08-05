@@ -43,7 +43,7 @@ const CreateBook = () => {
   const onSubmit = async (values: any) => {
     console.log(values);
     await createBook(values);
-    navigate("/");
+    navigate("/books");
   };
 
   return (

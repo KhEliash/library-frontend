@@ -5,10 +5,12 @@ import { Toaster } from "sonner";
 
 function App() {
   return (
-    <div className="  ">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-       <Toaster richColors position="top-center" />
-      <Outlet />
+      <Toaster richColors position="top-center" />
+      <main className="flex-1 bg-gray-50 p-3">
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
