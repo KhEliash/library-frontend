@@ -41,14 +41,15 @@ const BookDetails = () => {
             Borrow
           </Button>
         ) : (
-          <Button
-            variant="outline"
-            onClick={() => navigate(-1)}
-            className="cursor-pointer"
-          >
-            Back
-          </Button>
+          ""
         )}
+        <Button
+          variant="outline"
+          onClick={() => navigate(-1)}
+          className="cursor-pointer"
+        >
+          Back
+        </Button>
       </div>
     </div>
   );
