@@ -12,7 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import BookUpdateModal from "../books/update/BookUpdateModal";
 import { Button } from "@/components/ui/button";
 import BookDeleteConfirm from "../books/delete/BookDelete";
-import { Eye } from "lucide-react";
+import { Check, Eye, X } from "lucide-react";
 const Home = () => {
   const { data: book, isLoading } = useGetBooksQuery(undefined);
   const navigate = useNavigate();
@@ -41,10 +41,24 @@ const Home = () => {
                 <TableCell>{book.genre}</TableCell>
                 <TableCell>{book.isbn}</TableCell>
                 <TableCell>{book.copies}</TableCell>
-                <TableCell>{book.available ? "✅" : "❌"}</TableCell>
+                <TableCell>
+                  {book.available ? (
+                    <div>
+                      <Check className="text-green-500" size={20} />
+                    </div>
+                  ) : (
+                    <div>
+                      <X className="text-red-500" size={20} />
+                    </div>
+                  )}
+                </TableCell>
                 <TableCell className="flex items-center justify-center gap-2">
                   <Link to={`/book/${book?._id}`}>
-                    <Button variant="outline" size="icon" className="cursor-pointer">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="cursor-pointer"
+                    >
                       <Eye />
                     </Button>
                   </Link>

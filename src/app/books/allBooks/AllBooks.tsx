@@ -56,7 +56,6 @@ const AllBooks = () => {
                 </TableCell>
                 <TableCell className="flex items-center justify-center gap-2">
                   <Link to={`/book/${book?._id}`}>
-                    {" "}
                     <Button
                       variant="outline"
                       size="icon"
