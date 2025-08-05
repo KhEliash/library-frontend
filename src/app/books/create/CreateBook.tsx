@@ -41,13 +41,12 @@ const CreateBook = () => {
   });
 
   const onSubmit = async (values: any) => {
-    console.log(values);
     await createBook(values);
     navigate("/books");
   };
 
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-xl mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">➕ Add New Book</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
