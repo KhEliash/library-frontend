@@ -19,7 +19,7 @@ const Home = () => {
   if (isLoading) return <p className="text-center py-6">Loading...</p>;
   return (
     <Card className="p-4">
-      <h2 className="text-2xl font-bold mb-4">📚 All Books</h2>
+      <h2 className="text-2xl font-bold mb-4">📖 Books</h2>
       <CardContent>
         <Table>
           <TableHeader>

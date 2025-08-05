@@ -85,7 +85,7 @@ const CreateBook = () => {
             )}
           />
 
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full cursor-pointer">
             Create Book
           </Button>
         </form>

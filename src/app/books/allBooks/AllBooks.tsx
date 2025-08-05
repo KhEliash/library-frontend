@@ -21,7 +21,7 @@ const AllBooks = () => {
 
   return (
     <Card className="p-4">
-      <h2 className="text-2xl font-bold mb-4">📚 All Books</h2>
+      <h2 className="text-2xl font-bold mb-4">📚 All Books in library</h2>
       <CardContent>
         <Table>
           <TableHeader>
