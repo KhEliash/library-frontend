@@ -12,6 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import BookUpdateModal from "../update/BookUpdateModal";
 import BookDeleteConfirm from "../delete/BookDelete";
 import { Button } from "@/components/ui/button";
+import { Eye } from "lucide-react";
 
 const AllBooks = () => {
   const { data: books, isLoading } = useGetBooksQuery(undefined);
@@ -31,20 +32,22 @@ const AllBooks = () => {
               <TableHead>ISBN</TableHead>
               <TableHead>Copies</TableHead>
               <TableHead>Available</TableHead>
-              <TableHead>Actions</TableHead>
+              <TableHead className="text-center">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {books?.data?.map((book: any) => (
-              <TableRow key={book._id}>
+              <TableRow key={book._id} className="even:bg-gray-50">
                 <TableCell>{book.title}</TableCell>
                 <TableCell>{book.author}</TableCell>
                 <TableCell>{book.genre}</TableCell>
                 <TableCell>{book.isbn}</TableCell>
                 <TableCell>{book.copies}</TableCell>
                 <TableCell>{book.available ? "✅" : "❌"}</TableCell>
-                <TableCell>
-                  <Link to={`/book/${book?._id}`}> 👁 </Link>
+                <TableCell className="flex items-center justify-center gap-2">
+                  <Link to={`/book/${book?._id}`}>  <Button variant="outline" size="icon" className="cursor-pointer">
+                      <Eye />
+                    </Button> </Link>
                   <BookUpdateModal book={book} />
                   {book.available ? (
                     <Button
