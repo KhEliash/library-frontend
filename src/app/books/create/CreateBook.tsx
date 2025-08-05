@@ -15,6 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { useCreateBookMutation } from "@/redux/api/booksApi";
 import { Plus } from "lucide-react";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   title: z.string().min(1),
@@ -43,6 +44,7 @@ const CreateBook = () => {
 
   const onSubmit = async (values: any) => {
     await createBook(values);
+    toast.success("Book Created successfully.");
     navigate("/books");
   };
 
