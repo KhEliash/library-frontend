@@ -27,9 +27,7 @@ const BookDetails = () => {
       <p>
         <strong>ISBN:</strong> {book.isbn}
       </p>
-      <p>
-        <strong>Published Year:</strong> {book.publicationYear}
-      </p>
+     
       <p className="mt-4">
         <strong>Description:</strong> {book.description}
       </p>

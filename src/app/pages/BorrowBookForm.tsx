@@ -39,7 +39,7 @@ export default function BorrowBookForm() {
           <Label>Available Copies: {book?.data?.copies}</Label>
         </div>
         <div>
-          <Label htmlFor="quantity">Quantity</Label>
+          <Label htmlFor="quantity" className="mb-1">Quantity</Label>
           <Input
             type="number"
             id="quantity"
@@ -51,7 +51,7 @@ export default function BorrowBookForm() {
           />
         </div>
         <div>
-          <Label htmlFor="dueDate">Due Date</Label>
+          <Label htmlFor="dueDate" className="mb-1">Due Date</Label>
           <Input
             type="date"
             id="dueDate"
