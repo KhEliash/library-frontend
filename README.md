@@ -1,69 +1,79 @@
-# React + TypeScript + Vite
+ # 📖 Library Management Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A user-friendly frontend for the Library Management System built with **React**, **TypeScript**, and **Tailwind CSS**. It interacts with the backend API to display books, view details, and borrow books.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ Tech Stack
 
-## Expanding the ESLint configuration
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **React Router DOM**
+- **Lucide React**
+- **React Hook Form + Zod**
+- **Shadcn UI**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+ 
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🧪 Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- ✅ View all available books
+- ✅ See detailed view of a single book
+- ✅ Borrow a book (availability checked)
+- ✅ Form validation using Zod
+- ✅ Loading, error, and empty states
+- ✅ Responsive design (Mobile-first)
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/library-management-frontend.git
+cd library-management-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+---
+
+## 🚀 Running the App
+
+### Development mode:
+
+```bash
+npm run dev
+```
+
+Make sure the backend is running at the correct port (e.g. `http://localhost:5000`), and update the API base URL in your Axios instance if needed.
+
+---
+
+## 🔌 API Integration
+
+This frontend interacts with the following backend API endpoints:
+
+| Method | Endpoint           | Usage                |
+|--------|--------------------|----------------------|
+| GET    | `/api/books`       | Fetch all books      |
+| GET    | `/api/book/:id`    | Fetch single book    |
+| POST   | `/api/borrow`      | Borrow a book        |
+
+---
+
+ 
+
+## 🧑‍💻 Author
+
+- **Eliash**  
+ 
+ 
