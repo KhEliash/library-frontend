@@ -6,11 +6,13 @@ import AllBooks from "./app/books/allBooks/AllBooks";
 import BorrowBookForm from "./app/pages/BorrowBookForm";
 import BorrowSummary from "./app/pages/BorrowSummary";
 import BookDetails from "./app/books/details/BookDetails";
+import ErrorMessage from "./components/Error";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement:<ErrorMessage/>,
     children: [
       {
         index: true,
