@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useDeleteBookMutation } from "@/redux/api/booksApi";
+import { Trash } from "lucide-react";
 
 type Props = {
   id: string;
@@ -32,8 +33,8 @@ const BookDeleteConfirm = ({ id }: Props) => {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="destructive" size="icon">
-          🗑
+        <Button variant="outline" size="icon" className="cursor-pointer">
+          <Trash className="text-red-500" />
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>

@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useUpdateBookMutation } from "@/redux/api/booksApi";
 import { toast } from "sonner";
+import { Pen } from "lucide-react";
 
 type Props = {
   book: {
@@ -65,8 +66,8 @@ const BookUpdateModal = ({ book }: Props) => {
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <Button variant="outline" size="icon">
-          ✏
+        <Button variant="outline" size="icon" className="cursor-pointer">
+          <Pen/>
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">
